@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const loadingContainer = {
-  width: "2rem",
-  height: "2rem",
+  width: "3rem",
+  height: "7rem",
   display: "flex",
   justifyContent: "space-around"
 };
@@ -11,9 +11,9 @@ const loadingContainer = {
 const loadingCircle = {
   display: "block",
   width: "0.5rem",
-  height: "0.5rem",
-  backgroundColor: "black",
-  borderRadius: "0.25rem"
+  height: "2rem",
+  backgroundImage: "linear-gradient(105deg, rgba(215, 150, 235, 1) 15%, rgba(61, 206, 171, 1) 100%)",
+  borderRadius: "4rem"
 };
 
 const loadingContainerVariants = {
@@ -24,14 +24,14 @@ const loadingContainerVariants = {
   },
   end: {
     transition: {
-      staggerChildren: 0.2
+      staggerChildren: 0.35
     }
   }
 };
 
 const loadingCircleVariants = {
   start: {
-    y: "50%"
+    y: "120%"
   },
   end: {
     y: "150%"
@@ -52,6 +52,11 @@ export default function ThreeDotsWave() {
       initial="start"
       animate="end"
     >
+      <motion.span
+        style={loadingCircle}
+        variants={loadingCircleVariants}
+        transition={loadingCircleTransition}
+      />
       <motion.span
         style={loadingCircle}
         variants={loadingCircleVariants}
